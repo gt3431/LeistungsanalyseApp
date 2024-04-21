@@ -1,4 +1,4 @@
-import my_functions as my_functions
+import my_classes
 from datetime import datetime
 import json
 
@@ -6,20 +6,25 @@ if __name__ == "__main__":
     
     print("---LeistungsanalyseApp---")
 
-    experiment_name = input("Enter experiment name: ")
-    supervisor_name = input("Enter supervisor name: ")
-    first_name = input("Enter subject first name: ")
-    last_name = input("Enter subject last name: ")
-    gender = input("Enter subject gender [male/female]: ")
-    age = int(input("Enter subject age: "))
+    supervisor_first_name = input("Enter supervisor first name: ")
+    supervisor_last_name = input("Enter supervisor last name: ")
+    supervisor_gender = input("Enter supervisor gender [male/female]: ")
+    supervisor_age = int(input("Enter supervisor age: "))
 
-    person = my_functions.build_person(first_name , last_name, gender, age)
-    experiment = my_functions.build_experiment(experiment_name, datetime.now().strftime("%d/%m/%Y, %H:%M:%S"), supervisor_name, person)
+    subject_first_name = input("Enter subject first name: ")
+    subject_last_name = input("Enter subject last name: ")
+    subject_gender = input("Enter subject gender [male/female]: ")
+    subject_age = int(input("Enter subject age: "))
+
+    experiment_name = input("Enter experiment name: ")
+
+    supervisior = my_classes.Person(supervisor_first_name , supervisor_last_name, supervisor_gender, supervisor_age)
+    subject = my_classes.Person(subject_first_name , subject_last_name, subject_gender, subject_age)
+    experiment = my_classes.Experiment(experiment_name, datetime.now().strftime("%d/%m/%Y, %H:%M:%S"), supervisior, subject)
     
-    print("\n---Experiment Summary---")
-    print(f"Created person:\n{person}\n")
-    print(f"Created experiment:\n{experiment}\n")
-    print("Saving experiment to file...")
-    with open("experiment.json", "w") as f:
-        json.dump(experiment, f)
+    print("\nSaving inputed data to file...")
+    supervisior.save("data")
+    subject.save("data")
+    experiment.save("data")
+    print("File succesfully saved")
     print("------------------------\n")
