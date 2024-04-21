@@ -9,5 +9,5 @@ Diese Applikation generiert ein JSON File aus einem Experiment, welches mit User
     - Sollte ein Fehler auftreten ```Set-ExecutionPolicy Unrestricted -Scope Process``` ausführen und nochmals aktivieren
 - Packages mit ```pip install -r requirements.txt``` installieren
 - Die Anwendung mit ```python main.py``` in einer Komandozeile ausführen und Userinputs mit richtigen Werten befüllen
-- Nach erfolgreicehm beenden des Programms wurde eine experiment.json Datei erstellt. Diese beinhaltet ale zuvor einegenen Daten
-- Anmerkung: Datei wird bei erneuter Ausführung mit akutellen Weten überschrieben
+- Nach erfolgreichem durchlaufen des Programms werden die eingegebenen date unter dem Ordner ```/data``` gespeichert.
+- Anmerkung: Datei wird bei erneuter Ausführung mit akutellen Weten überschrieben.
