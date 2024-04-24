@@ -10,4 +10,4 @@ Diese Applikation generiert ein JSON File aus einem Experiment, welches mit User
 - Packages mit ```pip install -r requirements.txt``` installieren
 - Die Anwendung mit ```python main.py``` in einer Komandozeile ausführen und Userinputs mit richtigen Werten befüllen
 - Nach erfolgreichem durchlaufen des Programms werden die eingegebenen date unter dem Ordner ```/data``` gespeichert.
-- Anmerkung: Datei wird bei erneuter Ausführung mit akutellen Weten überschrieben.
+- Anmerkung: Datei wird bei erneuter Ausführung mit akutellen Weten überschrieben
