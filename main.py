@@ -16,16 +16,23 @@ if __name__ == "__main__":
     subject_birthyear = int(input("Enter subject birthyear: "))
     subject_birthmonth = int(input("Enter subject birthmonth: ")) 
     subject_birthday = int(input("Enter subject birthday: "))
+    subject_email = input("Enter subject email: ")
 
     experiment_name = input("\nEnter experiment name: ")
 
     examiner = my_classes.Examiner(examiner_first_name , examiner_last_name, examiner_gender)
-    subject = my_classes.Subject(subject_first_name , subject_last_name, subject_gender, datetime(subject_birthyear, subject_birthmonth, subject_birthday))
+    subject = my_classes.Subject(subject_first_name , subject_last_name, subject_gender, datetime(subject_birthyear, subject_birthmonth, subject_birthday), subject_email)
     experiment = my_classes.Experiment(experiment_name, datetime.now().strftime("%Y/%m/%m, %H:%M:%S"), examiner, subject)
     
     print("\nSaving inputed data to file...")
     examiner.save("data")
     subject.save("data")
     experiment.save("data")
-    print("File succesfully saved")
+    print("Files succesfully saved")
     print("------------------------\n")
+    print("Uploading data to webserver...")
+    url = "http://localhost:5000/"
+    examiner.put(url)
+    subject.put(url)
+    subject.update_email(url)
+    print("Succesfully uploaded")
