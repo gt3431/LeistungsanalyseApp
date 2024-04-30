@@ -40,7 +40,6 @@ class Subject(Person):
 
         return(response.status_code)
 
-
     def estimate_max_hr(self) -> int:
         """
         See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4124545/ for different formulas

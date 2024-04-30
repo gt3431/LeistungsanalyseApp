@@ -11,3 +11,4 @@ Diese Applikation generiert ein JSON File aus einem Experiment, welches mit User
 - Die Anwendung mit ```python main.py``` in einer Komandozeile ausführen und Userinputs mit richtigen Werten befüllen
 - Nach erfolgreichem durchlaufen des Programms werden die eingegebenen date unter dem Ordner ```/data``` gespeichert.
 - Anmerkung: Datei wird bei erneuter Ausführung mit akutellen Weten überschrieben
+- Anmerkung 2: Um die Webserverfunktionen zu verwenden ist folgender Webserver nötig: ```https://github.com/jhumci/8_1_REST-API```
